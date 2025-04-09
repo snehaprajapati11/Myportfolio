@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Expenses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #582e2d;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+
+      font-style:oblique;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff8f8;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #fceded;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #583939;
+    }
+
+    .hero {
+      background-color: #2b2626;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      color: #990c0c;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      color: #c4b8b8;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px 20px;
+    }
+
+    .feature-card {
+      background-color: #493535;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .feature-card h2 {
+      color: #dad0d0;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #c8c8c8;
+    }
+
+    .page {
+      background-color: #222;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .page p {
+      color: #ecd9d9;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #493535;
+      padding: 40px 20px;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1 1 250px;
+    }
+
+    .column h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .column p,
+    .column a {
+      font-size: 0.95rem;
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .social-links a {
+      font-size: 1.4rem;
+      margin-right: 15px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      opacity: 0.8;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 30px;
+      border-top: 1px solid #555;
+      padding-top: 15px;
+      color: #aaa;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #582e2d;
+        margin-top: 10px;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .footer-columns {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="brand">Expense Tracker</div>
+    <div class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#" onclick="scrollToSection('page3')">About</a>
+      <a href="#">Login</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Track Your Expenses Effortlessly</h1>
+    <p>Stay in control of your finances with ExpenseMate – your smart personal expense tracker.</p>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature-card">
+      <h2>📊 Visual Insights</h2>
+      <p>Analyze your spending habits with easy-to-understand charts and graphs.</p>
+    </div>
+    <div class="feature-card">
+      <h2>📅 Daily Tracking</h2>
+      <p>Log your daily expenses quickly and keep track of your financial health.</p>
+    </div>
+    <div class="feature-card">
+      <h2>🔒 Secure & Private</h2>
+      <p>Your data is encrypted and protected. Only you have access to your records.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <div class="page" id="page3">
+    <h2>About Us</h2>
+    <p>We believe that managing money should be simple and stress-free. Our mission is to help individuals gain control over their finances with a powerful, user-friendly tool that fits seamlessly into everyday life.</p>
+    <p><a href="#">Learn More</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-columns">
+      <div class="column">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-location-dot"></i> 123 Education Street, Knowledge City</p>
+        <p><i class="fas fa-phone"></i> +1 (234) 567-8900</p>
+        <p><i class="fas fa-envelope"></i> info@triviaquiz.com</p>
+      </div>
+      <div class="column">
+        <h3>Quick Links</h3>
+        <p>Log your daily expenses quickly and keep track of your financial health.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="column">
+        <h3>About Us</h3>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">Services</a></p>
+        <p><a href="#">Products</a></p>
+        <p><a href="#">Blog</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Personal Expense Tracker. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

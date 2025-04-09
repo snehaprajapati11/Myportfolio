@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            background-color: rgb(46, 127, 202);
+            font-family: 'poppins',sans-serif;
+
+            /* color: aliceblue; */
+        }
+                nav{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(23, 72, 145);
+
+        }
+        nav ul{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0,23px;
+            padding: 34px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: rgb(241, 241, 214);
+        }      
+          nav ul li a:hover{
+           color: rgb(7, 7, 39);
+           font-size: 1.02rem;
+        }
+        .left{
+            font-style:oblique;
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(241, 241, 214);
+        }
+
+
+
+    .projects-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: rgb(29, 26, 26);
+    }
+
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 90px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+
+    .project-title {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      margin-right: 10px;
+      color: #0c5246;
+      font-weight: bold;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav class="first">
+
+            <div class="left">
+            Sneha's portfolio
+            </div>
+            <div class="right">
+                   <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#"  onclick="scrollToSection('about')" >About</a></li>
+                    <li><a href="#">Project's </a></li>
+                    <li><a href="#"  onclick="scrollToSection('about')">Contact me</a></li>
+                </ul>
+        
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="projects-section">
+        <h2>My Projects</h2>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <h3 class="project-title"> 💰 finance adviser</h3>
+                <p class="project-description">A finance adviser to manage expenses of user .</p>
+                <div class="project-links">
+                    <a href="https://your-demo-link.com" target="_blank">Live Demo</a>
+                    <a href="https://github.com/yourusername/weather-app" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200?text=Portfolio+Website" alt="Portfolio Website">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">Responsive portfolio website using HTML, CSS, and no JS!</p>
+                <div class="project-links">
+                  <a href="https://your-portfolio.com" target="_blank">Live Demo</a>
+                  <a href="https://github.com/yourusername/portfolio" target="_blank">GitHub</a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img src="https://via.placeholder.com/400x200?text=Portfolio+Website" alt="Portfolio Website">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">Responsive portfolio website using HTML, CSS, and no JS!</p>
+                <div class="project-links">
+                  <a href="https://your-portfolio.com" target="_blank">Live Demo</a>
+                  <a href="https://github.com/yourusername/portfolio" target="_blank">GitHub</a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img src="https://via.placeholder.com/400x200?text=Portfolio+Website" alt="Portfolio Website">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">Responsive portfolio website using HTML, CSS, and no JS!</p>
+                <div class="project-links">
+                  <a href="https://your-portfolio.com" target="_blank">Live Demo</a>
+                  <a href="https://github.com/yourusername/portfolio" target="_blank">GitHub</a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img src="https://via.placeholder.com/400x200?text=Portfolio+Website" alt="Portfolio Website">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">Responsive portfolio website using HTML, CSS, and no JS!</p>
+                <div class="project-links">
+                  <a href="https://your-portfolio.com" target="_blank">Live Demo</a>
+                  <a href="https://github.com/yourusername/portfolio" target="_blank">GitHub</a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img src="https://via.placeholder.com/400x200?text=Portfolio+Website" alt="Portfolio Website">
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">Responsive portfolio website using HTML, CSS, and no JS!</p>
+                <div class="project-links">
+                  <a href="https://your-portfolio.com" target="_blank">Live Demo</a>
+                  <a href="https://github.com/yourusername/portfolio" target="_blank">GitHub</a>
+                </div>
+              </div>
+              
+              </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>personal expenses</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+*{
+   margin: 0;
+   padding: 0;
+
+        }
+        body{
+            background-color: rgb(0, 0, 0);
+            font-family: 'poppins',sans-serif;
+
+            /* color: aliceblue; */
+        }
+        nav{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            height: 80px;
+            background-color: #582e2d;
+
+        }
+        nav ul{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0,23px;
+            padding: 34px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #d3bdbd;
+        }      
+          nav ul li a:hover{
+           color: rgb(7, 7, 39);
+           font-size: 1.02rem;
+        }
+
+        .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff8f8;
+      cursor: pointer;
+    }
+
+        .left{
+            font-style:oblique;
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #f3f3f3;
+        }
+
+         .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #2b2626;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #990c0c;
+
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #c4b8b8;
+
+    }
+
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: #493535;
+      border-radius: 16px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .feature-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #dad0d0;
+    }
+
+
+
+    .page {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #222;
+    color: #faf1f1;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+#page3 {
+  margin-top: 5%;
+  width: 70%;
+  border-radius: 8px;
+    text-align: center; 
+    margin-bottom: 5%;
+
+}
+
+#page3 h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#page3 p {
+  color: #ecd9d9;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+     footer.main-footer {
+      background: #493535;
+      color: #dad0d0;
+      padding: 40px;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .footer-columns .column {
+      flex: 1;
+      min-width: 250px;
+      margin-right: 20px;
+    }
+
+    .footer-columns .column:last-child {
+      margin-right: 0;
+    }
+
+    .footer-columns h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .social-links a {
+            color: white;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+    .footer-columns p,
+    .footer-columns ul {
+      margin-bottom: 10px;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+
+    .footer-columns ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-columns ul li a {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .footer-columns ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-columns .social-links a {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1.2em;
+      color: #ddd;
+    }
+
+    .footer-columns .social-links a:hover {
+      opacity: 0.8;
+    }
+
+    .main-footer .copyright {
+      text-align: center;
+      font-size: 0.8em;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #582e2d;
+        margin-top: 10px;
+        padding: 10px 0;
+      }
+
+      .right.active {
+        display: flex;
+      }
+    }
+  </style>
+
+  
+</head>
+
+<body>
+
+    <header>
+        <nav class="first">
+    
+        <div class="left">Expense Tracker       </div>
+<div class="nav-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <div class="right" id="navLinks">
+
+               <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" onclick="scrollToSection('page3')">About</a></li>
+                <li><a href="https://expensetrackerr.streamlit.app/">login </a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+    
+        </div>
+    </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="main">
+                <h1>Track Your Expenses Effortlessly</h1>
+                <p>Stay in control of your finances with ExpenseMate – your smart personal expense tracker.</p>
+            </div>
+            <section class="features">
+                <div class="feature-card">
+                  <h2>📊 Visual Insights</h2>
+                  <p>Analyze your spending habits with easy-to-understand charts and graphs.</p>
+                </div>
+                <div class="feature-card">
+                  <h2>📅 Daily Tracking</h2>
+                  <p>Log your daily expenses quickly and keep track of your financial health.</p>
+                </div>
+                <div class="feature-card">
+                  <h2>🔒 Secure & Private</h2>
+                  <p>Your data is encrypted and protected. Only you have access to your records.</p>
+                </div>
+              </section>
+        </section>
+    </main>
+
+
+    <div class="page" id="page3">  <h2>About Us</h2>
+      <p>we believe that managing money should be simple and stress-free. Our mission is to help individuals gain control over their finances with a powerful, user-friendly tool that fits seamlessly into everyday life.</p>         <p><a href="#">Learn More</a></p>  </p>
+
+        <h3>Stay Connected</h3>
+  </div>
+  
+   
+  <footer class="main-footer">
+    <div class="footer-columns">
+
+     
+
+    <div class="column">
+      <h3>Contact Info</h3>
+      <p><i class="fas fa-location-dot"></i> 123 Education Street, Knowledge City</p>
+      <p><i class="fas fa-phone"></i> +1 (234) 567-8900</p>
+      <p><i class="fas fa-envelope"></i> info@triviaquiz.com</p>
+  </div>
+  <div class="column">
+  <div class="social-links",>
+    <h3>Quick Links</h3>
+    <p>Log your daily expenses quickly and keep<br> track of your financial health.</p>
+
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div></div>
+
+      <div class="column">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+     
+       
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 personal expense tracker. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+
+   
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+    </script>
+    
+</body>
+</html>

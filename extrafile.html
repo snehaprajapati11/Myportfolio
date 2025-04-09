@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .projects-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .project-title {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      margin-right: 10px;
+      color: #007BFF;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <section class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Weather+App" alt="Weather App">
+        <h3 class="project-title">Weather App</h3>
+        <p class="project-description">A weather app using JavaScript and OpenWeatherMap API.</p>
+        <div class="project-links">
+          <a href="https://your-demo-link.com" target="_blank">Live Demo</a>
+          <a href="https://github.com/yourusername/weather-app" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Portfolio+Website" alt="Portfolio Website">
+        <h3 class="project-title">Portfolio Website</h3>
+        <p class="project-description">Responsive portfolio website using HTML, CSS, and no JS!</p>
+        <div class="project-links">
+          <a href="https://your-portfolio.com" target="_blank">Live Demo</a>
+          <a href="https://github.com/yourusername/portfolio" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Add more projects here -->
+      
+    </div>
+  </section>
+</body>
+</html>
